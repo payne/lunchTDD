@@ -12,4 +12,12 @@ feature 'create new group' do
 
     expect(page).to have_content('Group has been created.')
   end
+
+  scenario 'cannot create group with invalid data' do
+    visit('/')
+    click_on('New Group') # TODO use id instead of text.
+    click_on('Create Group')
+  
+    expect(page).to have_content("can't be blank")
+  end
 end
