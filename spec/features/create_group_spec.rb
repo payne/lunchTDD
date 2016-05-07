@@ -1,23 +1,19 @@
 require 'rails_helper'
+require_relative '../support/new_group_form'
 
 feature 'create new group' do
   scenario 'create new group with valid data' do
-    visit('/')
-    click_on('New Group') # TODO Use id instead of text.
-
-    fill_in('Title', with: 'Java Junkies')
-    fill_in('Description', with: 'People who like java and all things on the JVM.')
-    check('Accepting new members')
-    click_on('Create Group')
+    new_group_form = NewGroupForm.new
+    new_group_form.visit_page.fill_in_with(
+      title: 'Java Junkies'
+    ).submit
 
     expect(page).to have_content('Group has been created.')
   end
 
   scenario 'cannot create group with invalid data' do
-    visit('/')
-    click_on('New Group') # TODO use id instead of text.
-    click_on('Create Group')
-  
+    new_group_form = NewGroupForm.new
+    new_group_form.visit_page.fill_in_with.submit
     expect(page).to have_content("can't be blank")
   end
 end
