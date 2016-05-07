@@ -16,5 +16,6 @@ class NewGroupForm
 
   def submit
     click_on('Create Group')
+    self
   end
 end
