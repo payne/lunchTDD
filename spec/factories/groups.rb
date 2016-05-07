@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :group do
-    title "MyString"
+    title "Bogus title"
     description "MyText"
     growing false
   end
