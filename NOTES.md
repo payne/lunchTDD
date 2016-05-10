@@ -10,3 +10,6 @@ TDD Rails with Rspec class says
 # Handy commands
 1. rvm --create use 2.3.0 --rvmrc
 
+# Articles used:
+1. http://www.sitepoint.com/devise-authentication-in-depth/
+
