@@ -1,4 +1,4 @@
-class Session
+class Sessions
 def destroy
 
 end
