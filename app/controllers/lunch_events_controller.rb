@@ -69,6 +69,6 @@ class LunchEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lunch_event_params
-      params.require(:lunch_event).permit(:lunchtime, :group_id)
+      params.require(:lunch_event).permit(:name, :lunchtime, :group_id)
     end
 end
